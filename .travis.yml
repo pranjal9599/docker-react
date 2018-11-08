@@ -7,3 +7,10 @@ before_install:
 
 script:
   - docker run pranjal9599/docker-react npm run test -- --coverage
+
+deploy:
+  provider: heroku
+  app: docker-reac
+  api-key: $HEROKU_AUTH_TOKEN
+  on:
+    branch: master
